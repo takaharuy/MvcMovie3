@@ -12,8 +12,6 @@ C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netc
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.csprojAssemblyReference.cache
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.AssemblyInfoInputs.cache
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.AssemblyInfo.cs
-C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.csproj.CoreCompileInputs.cache
-C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.RazorAssemblyInfo.cache
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.RazorAssemblyInfo.cs
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\ContosoUniversity.TagHelpers.input.cache
