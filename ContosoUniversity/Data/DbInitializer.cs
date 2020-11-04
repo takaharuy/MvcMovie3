@@ -39,7 +39,7 @@ namespace ContosoUniversity.Data
             {
                 new Course{CourseId=1050,Title="Chemistry",Credits=3},
                 new Course{CourseId=4022,Title="Microeconomics",Credits=3},
-                new Course{CourseId=4021,Title="Macroeconomics",Credits=3},
+                new Course{CourseId=4041,Title="Macroeconomics",Credits=3},
                 new Course{CourseId=1045,Title="Calcuaus",Credits=4},
                 new Course{CourseId=3141,Title="Trigonometry",Credits=4},
                 new Course{CourseId=2021,Title="Composition",Credits=3},
@@ -55,7 +55,7 @@ namespace ContosoUniversity.Data
             {
                 new Enrollment{StudentId=1,CourseId=1050,Grade=Grade.A},
                 new Enrollment{StudentId=1,CourseId=4022,Grade=Grade.C},
-                new Enrollment{StudentId=1,CourseId=4021,Grade=Grade.B},
+                new Enrollment{StudentId=1,CourseId=4041,Grade=Grade.B},
                 new Enrollment{StudentId=2,CourseId=1045,Grade=Grade.B},
                 new Enrollment{StudentId=2,CourseId=3141,Grade=Grade.F},
                 new Enrollment{StudentId=2,CourseId=2021,Grade=Grade.F},
