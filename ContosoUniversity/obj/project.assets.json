@@ -8820,25 +8820,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\takah\\.nuget\\packages\\": {},
+    "C:\\Users\\t.yuji\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
+      "projectUniqueName": "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
       "projectName": "ContosoUniversity",
-      "projectPath": "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
-      "packagesPath": "C:\\Users\\takah\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\obj\\",
+      "projectPath": "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
+      "packagesPath": "C:\\Users\\t.yuji\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\takah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\t.yuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -8851,6 +8851,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -8862,6 +8863,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
@@ -8900,7 +8902,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
