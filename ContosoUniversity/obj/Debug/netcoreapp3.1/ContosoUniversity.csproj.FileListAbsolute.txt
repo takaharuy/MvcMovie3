@@ -1,6 +1,5 @@
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netcoreapp3.1\ContosoUniversity.exe
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netcoreapp3.1\ContosoUniversity.deps.json
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\bin\Debug\netcoreapp3.1\ContosoUniversity.runtimeconfig.json
@@ -350,3 +349,9 @@ C:\Users\t.yuji\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\net
 C:\Users\t.yuji\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\t.yuji\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\scopedcss\bundle\ContosoUniversity.styles.css
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\scopedcss\bundle\ContosoUniversity.styles.css
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Create.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Delete.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Details.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Edit.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Index.cshtml.g.cs
