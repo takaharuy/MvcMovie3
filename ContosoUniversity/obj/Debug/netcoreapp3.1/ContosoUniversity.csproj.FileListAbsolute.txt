@@ -355,3 +355,8 @@ C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netc
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Details.cshtml.g.cs
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Edit.cshtml.g.cs
 C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Courses\Index.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Instructors\Create.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Instructors\Delete.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Instructors\Details.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Instructors\Edit.cshtml.g.cs
+C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity\obj\Debug\netcoreapp3.1\Razor\Views\Instructors\Index.cshtml.g.cs

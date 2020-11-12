@@ -21,11 +21,6 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Instructors
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Instructors.ToListAsync());
-        }
-
         public async Task<IActionResult> Index(int? id, int? courseId)
         {
             var viewModel = new InstructorIndexData();
@@ -56,6 +51,8 @@ namespace ContosoUniversity.Controllers
                 viewModel.Enrollments = viewModel.Courses.Where(
                     x => x.CourseId == courseId).Single().Enrollments;
             }
+
+            return View(viewModel);
         }
 
         // GET: Instructors/Details/5
