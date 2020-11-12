@@ -48,8 +48,13 @@ namespace ContosoUniversity.Controllers
             if (courseId != null)
             {
                 ViewData["CourseId"] = courseId.Value;
-                viewModel.Enrollments = viewModel.Courses.Where(
-                    x => x.CourseId == courseId).Single().Enrollments;
+                var selectedCourse = viewModel.Courses.Where(x => x.CourseId == courseId).Single();
+                await _context.Entry(selectedCourse).Collection(x => x.Enrollments).LoadAsync();
+                foreach(Enrollment enrollment in selectedCourse.Enrollments)
+                {
+                    await _context.Entry(enrollment).Reference(x => x.Student).LoadAsync();
+                }
+                viewModel.Enrollments = selectedCourse.Enrollments;
             }
 
             return View(viewModel);
