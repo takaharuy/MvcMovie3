@@ -106,6 +106,19 @@ namespace ContosoUniversity.Controllers
             var departmentToUpdate = await _context.Departments.Include(
                 i => i.Administrator).FirstOrDefaultAsync(mbox => mbox.DepartmentId == id);
 
+            if(departmentToUpdate == null)
+            {
+                Department deletedDepartment = new Department();
+                await TryUpdateModelAsync(deletedDepartment);
+                ModelState.AddModelError(
+                    string.Empty, "Unable to save changes.the department was deleted by another user.");
+                ViewData["InstructorId"] = new SelectList(
+                    _context.Instructors, "Id", "FullName", deletedDepartment.InstructorId);
+                return View(deletedDepartment);
+            }
+
+            _context.Entry(departmentToUpdate).Property("RowVersion").OriginalValue = rowVersion;
+
             if (await TryUpdateModelAsync<Department>(
                 departmentToUpdate, "",
                 s => s.Name, s => s.StartDate, s => s.Budget, s => s.InstructorId))
