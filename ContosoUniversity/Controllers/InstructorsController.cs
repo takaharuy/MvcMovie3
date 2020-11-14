@@ -110,21 +110,41 @@ namespace ContosoUniversity.Controllers
 
             var instructor = await _context.Instructors
                 .Include(i => i.OfficeAssignment)
+                .Include(i => i.CourseAssignmens).ThenInclude(i => i.Course)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (instructor == null)
             {
                 return NotFound();
             }
+            PopulateAssignedCourseData(instructor);
             return View(instructor);
+        }
+
+        private void PopulateAssignedCourseData(Instructor instructor)
+        {
+            var allCourses = _context.Courses;
+            var instructorCourses = new HashSet<int>(
+                instructor.CourseAssignmens.Select(c => c.CourseId));
+            var viewModel = new List<AssignedCourseData>();
+            foreach(var course in allCourses)
+            {
+                viewModel.Add(new AssignedCourseData
+                {
+                    CourseId = course.CourseId,
+                    Title = course.Title,
+                    Assigned = instructorCourses.Contains(course.CourseId)
+                });
+            }
+            ViewData["Courses"] = viewModel;
         }
 
         // POST: Instructors/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost, ActionName("Edit")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> EditPost(int? id)
+        public async Task<IActionResult> Edit(int? id, string[] selectedCourses)
         {
             if (id == null)
             {
@@ -133,6 +153,8 @@ namespace ContosoUniversity.Controllers
 
             var instructorToUpdate = await _context.Instructors
                 .Include(i => i.OfficeAssignment)
+                .Include(i => i.CourseAssignmens)
+                .ThenInclude(i => i.Course)
                 .FirstOrDefaultAsync(s => s.Id == id);
 
             if (await TryUpdateModelAsync<Instructor>(
@@ -143,6 +165,7 @@ namespace ContosoUniversity.Controllers
                 {
                     instructorToUpdate.OfficeAssignment = null;
                 }
+                UpdateInstructorCourses(selectedCourses, instructorToUpdate);
                 try
                 {
                     await _context.SaveChangesAsync();
@@ -156,7 +179,43 @@ namespace ContosoUniversity.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            UpdateInstructorCourses(selectedCourses, instructorToUpdate);
+            PopulateAssignedCourseData(instructorToUpdate);
             return View(instructorToUpdate);
+        }
+
+        private void UpdateInstructorCourses(string[] selectedCourses, Instructor instructorToUpdate)
+        {
+            if(selectedCourses == null)
+            {
+                instructorToUpdate.CourseAssignmens = new List<CourseAssignment>();
+                return;
+            }
+
+            var selectedCoursesHS = new HashSet<string>(selectedCourses);
+            var instructorCourses = new HashSet<int>(
+                instructorToUpdate.CourseAssignmens.Select(c => c.Course.CourseId));
+            foreach(var course in _context.Courses)
+            {
+                if (selectedCoursesHS.Contains(course.CourseId.ToString()))
+                {
+                    if (!instructorCourses.Contains(course.CourseId))
+                    {
+                        instructorToUpdate.CourseAssignmens.Add(
+                            new CourseAssignment { InstructorId = instructorToUpdate.Id, CourseId = course.CourseId });
+                    }
+                }
+                else
+                {
+                    if (instructorCourses.Contains(course.CourseId))
+                    {
+                        CourseAssignment courseToRemove = instructorToUpdate.CourseAssignmens.FirstOrDefault(
+                            i => i.CourseId == course.CourseId);
+                        _context.Remove(courseToRemove);
+                    }
+                }
+
+            }
         }
 
         // GET: Instructors/Delete/5
