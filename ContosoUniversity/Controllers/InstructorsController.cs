@@ -81,6 +81,9 @@ namespace ContosoUniversity.Controllers
         // GET: Instructors/Create
         public IActionResult Create()
         {
+            var instructor = new Instructor();
+            instructor.CourseAssignmens = new List<CourseAssignment>();
+            PopulateAssignedCourseData(instructor);
             return View();
         }
 
@@ -89,14 +92,28 @@ namespace ContosoUniversity.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,LastName,FirstMidName,HireDate")] Instructor instructor)
+        public async Task<IActionResult> Create(
+            [Bind("LastName,FirstMidName,HireDate,OfficeAssignment")] Instructor instructor, string[] selectedCourses)
         {
+            if (selectedCourses != null)
+            {
+                instructor.CourseAssignmens = new List<CourseAssignment>();
+                foreach(var course in selectedCourses)
+                {
+                    var courseTooAdd = new CourseAssignment
+                    {
+                        InstructorId = instructor.Id,
+                        CourseId = int.Parse(course)
+                    };
+                }
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(instructor);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            PopulateAssignedCourseData(instructor);
             return View(instructor);
         }
 
@@ -241,8 +258,17 @@ namespace ContosoUniversity.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var instructor = await _context.Instructors.FindAsync(id);
+            Instructor instructor = await _context.Instructors
+                .Include(i => i.CourseAssignmens)
+                .SingleAsync(i => i.Id == id);
+
+            var departments = await _context.Departments
+                .Where(d => d.InstructorId == id)
+                .ToListAsync();
+            departments.ForEach(d => d.InstructorId = null);
+
             _context.Instructors.Remove(instructor);
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
