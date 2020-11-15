@@ -176,7 +176,7 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Departments/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, bool? concurrencyError)
         {
             if (id == null)
             {
@@ -185,24 +185,50 @@ namespace ContosoUniversity.Controllers
 
             var department = await _context.Departments
                 .Include(d => d.Administrator)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.DepartmentId == id);
             if (department == null)
             {
+                if (concurrencyError.GetValueOrDefault())
+                {
+                    return RedirectToAction(nameof(Index));
+                }
                 return NotFound();
+            }
+
+            if (concurrencyError.GetValueOrDefault())
+            {
+                ViewData["ConcurrencyErrorMessage"] = "The record you attempted to delete "
+                    + "was modigied by another user after you got the otiginal values. "
+                    + "The delete operation was canceled and the Current values in the "
+                    + "database have been displayed. If you still want to delete this "
+                    + "record. click the Delete button again. Otherwise "
+                    + "click the Back to List hyperlink.";
             }
 
             return View(department);
         }
 
         // POST: Departments/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Delete(Department department)
         {
-            var department = await _context.Departments.FindAsync(id);
-            _context.Departments.Remove(department);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                if(await _context.Departments.AnyAsync(m => m.DepartmentId == department.DepartmentId))
+                {
+                    _context.Departments.Remove(department);
+                    await _context.SaveChangesAsync();
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            catch(DbUpdateConcurrencyException /* ex */)
+            {
+                // Log the error (uncomment ex valiable name and write a log.)
+                return RedirectToAction(nameof(Delete),
+                    new { concurrencyError = true, id = department.DepartmentId });
+            }
         }
 
         private bool DepartmentExists(int id)
