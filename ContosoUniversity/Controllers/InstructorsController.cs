@@ -28,12 +28,7 @@ namespace ContosoUniversity.Controllers
                 .Include(i => i.OfficeAssignment)
                 .Include(i => i.CourseAssignmens)
                 .ThenInclude(i => i.Course)
-                .ThenInclude(i => i.Enrollments)
-                .ThenInclude(i => i.Student)
-                .Include(i => i.CourseAssignmens)
-                .ThenInclude(i => i.Course)
                 .ThenInclude(i => i.Department)
-                .AsNoTracking()
                 .OrderBy(i => i.LastName)
                 .ToListAsync();
 
