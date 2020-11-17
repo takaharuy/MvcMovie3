@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj": {}
+    "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj": {
+    "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
+        "projectUniqueName": "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
         "projectName": "ContosoUniversity",
-        "projectPath": "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
-        "packagesPath": "C:\\Users\\t.yuji\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\t.yuji\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\obj\\",
+        "projectPath": "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\ContosoUniversity.csproj",
+        "packagesPath": "C:\\Users\\takah\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\takah\\source\\repos\\MvcMovie3\\MvcMovie3\\ContosoUniversity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\t.yuji\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\takah\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -58,6 +58,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.10.9, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

@@ -1,0 +1,28 @@
+services:
+  contosouniversity:
+    build:
+      context: C:\Users\takah\source\repos\MvcMovie3\MvcMovie3
+      dockerfile: ContosoUniversity/Dockerfile
+    depends_on:
+      db:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:5000
+    image: contosouniversity
+    ports:
+    - published: 8800
+      target: 5000
+    volumes:
+    - C:\Users\takah\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+  db:
+    container_name: SqlDb
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: pass%w0rd
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    ports:
+    - published: 1433
+      target: 1433
+    restart: always
+version: '3.4'

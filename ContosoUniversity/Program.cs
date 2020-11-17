@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
 
 namespace ContosoUniversity
 {
@@ -23,6 +24,8 @@ namespace ContosoUniversity
                 try
                 {
                     var context = servicea.GetRequiredService<SchoolContext>();
+                    context.Database.Migrate();
+                    
                     DbInitializer.Initialize(context);
                 }
                 catch(Exception ex)
