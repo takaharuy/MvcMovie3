@@ -14,9 +14,9 @@ services:
       - ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS=true
       #- NUGET_FALLBACK_PACKAGES=$container_paths_to_fallback_packages_contosouniversity$
     volumes:
-      - C:\Users\takah\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity:/app
-      - C:\Users\takah\source\repos\MvcMovie3\MvcMovie3:/src
-      - C:\Users\takah\vsdbg\vs2017u5:/remote_debugger:rw
+      - C:\Users\t.yuji\source\repos\MvcMovie3\MvcMovie3\ContosoUniversity:/app
+      - C:\Users\t.yuji\source\repos\MvcMovie3\MvcMovie3:/src
+      - C:\Users\t.yuji\vsdbg\vs2017u5:/remote_debugger:rw
 #$nuget_volume_mapping_contosouniversity$
       - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
       - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro

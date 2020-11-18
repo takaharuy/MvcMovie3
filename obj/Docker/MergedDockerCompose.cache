@@ -1,7 +1,7 @@
 services:
   contosouniversity:
     build:
-      context: C:\Users\takah\source\repos\MvcMovie3\MvcMovie3
+      context: C:\Users\t.yuji\source\repos\MvcMovie3\MvcMovie3
       dockerfile: ContosoUniversity/Dockerfile
     depends_on:
       db:
@@ -14,7 +14,7 @@ services:
     - published: 8800
       target: 5000
     volumes:
-    - C:\Users\takah\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
+    - C:\Users\t.yuji\AppData\Roaming\ASP.NET\Https:/root/.aspnet/https:ro
   db:
     container_name: SqlDb
     environment:
